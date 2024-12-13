@@ -11,7 +11,9 @@ namespace orai
 		static Random r = new Random();
 		static void Main(string[] args)
 		{
-			
+			int[] szamokk = new int[10];
+			f01(szamokk);
+			f05(szamokk);
 
 			//Console.WriteLine();
 			//Console.WriteLine("MÁSODIK FELADAT");

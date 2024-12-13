@@ -11,47 +11,61 @@ namespace orai
 		static Random r = new Random();
 		static void Main(string[] args)
 		{
+			
+
+			//Console.WriteLine();
+			//Console.WriteLine("MÁSODIK FELADAT");
+			//int[] szamok = {10,15,24,22,21,32,61,87 }; // lesz egy referenciacime a memóriában: hol van a tömböm
+			//Console.WriteLine("ennyi páros szám volt:"+ f02(szamok)); //csak a cimet adom át
 
 
-			f01();
+			//Console.WriteLine();
+			//Console.WriteLine("harmadik FELADAT");
+			//double[] szam1 = { 10.5, 15.6, 24.6, 22.1, 33.3, 55.6 };
+			//Console.WriteLine("az átlag:" + f03(szam1));
 
 
-            int[] szamok = {10,15,24,22,21,32,61,87 }; // lesz egy referenciacime a memóriában: hol van a tömböm
-			Console.WriteLine();
-			Console.WriteLine("MÁSODIK FELADAT");
-			Console.WriteLine("ennyi páros szám volt:"+ f02(szamok)); //csak a cimet adom át
-
-
-			Console.WriteLine();
-			Console.WriteLine("harmadiki FELADAT");
-			double[] szam1 = { 10.5, 15.6, 24.6, 22.1, 33.3, 55.6 };
-			Console.WriteLine("az átlag:" + f03(szam1));
+			//Console.WriteLine();
+			//Console.WriteLine("negyedik FELADAT");
+			//int[] szam2 = { 10, 15, 24, 22, 33, 55 };
+			//Console.WriteLine("" + f04(szam2));
 
 		}
 
-		static void f01()
+		static void f01(int[] tomb)
 		{
-			int[] szamok = new int[15];
-			Console.WriteLine("eredeti szám:");
-			for (int i = 0; i < szamok.Length; i++)
+            Console.WriteLine("első feladat");
+            //int[] szamok = new int[15];
+            //Console.WriteLine("eredeti szám:");
+            //for (int i = 0; i < szamok.Length; i++)
+            //{
+            //	szamok[i] = r.Next(1, 50); ;
+            //	Console.Write(szamok[i] + " , ");
+            //}
+            //         Console.WriteLine();
+            //         Console.WriteLine("Módosított szám");
+            //         for (int i = 0; i < szamok.Length; i++)
+            //{
+            //	int random = r.Next(1, 50);
+            //	szamok[i] += random;
+            //	Console.Write(szamok[i] +" , ");
+            //}
+            //         Console.WriteLine();
+
+            for (int i = 0; i < tomb.Length; i++)
 			{
-				szamok[i] = r.Next(1, 50); ;
-				Console.Write(szamok[i] + " , ");
+				tomb[i] += r.Next(1, 51);
+				Console.Write(tomb[i] + " , ");
 			}
-            Console.WriteLine();
-            Console.WriteLine("Módosított szám");
-            for (int i = 0; i < szamok.Length; i++)
-			{
-				int random = r.Next(1, 50);
-				szamok[i] += random;
-				Console.Write(szamok[i] +" , ");
-			}
-            Console.WriteLine();
-        }
+			
+		}
 
 		static int f02(int[] tomb)
 		{
-			int szam = 0;
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("második feladat");
+            int szam = 0;
 			for (int i = 0; i < tomb.Length; i++)
 			{
 				if (tomb[i] %2 == 0)
@@ -63,10 +77,10 @@ namespace orai
 
 		}
 
-
-
-		static double f03(double[] tomb)
+		static double f03(int[] tomb)
 		{
+			Console.WriteLine();
+			Console.WriteLine("harmadik feladat");
 			double atlag = 0;
 			for (int i = 0; i < tomb.Length; i++)
 			{ 			
@@ -77,14 +91,47 @@ namespace orai
 			return atlag;
 		}
 
+		static int[] f04(int[] tomb)
+		{
+            int[] paratlanok =new int [tomb.Length];
+			for (int i = 0; i < tomb.Length; i++)
+			{
+				
+					if (tomb[i] % 2 == 0)
+					{
+						
+						paratlanok[i] += tomb[i]+1;
+					}
+					else
+					{
+						paratlanok[i] += tomb[i];
+					}				
+			}
+			return paratlanok;
+		}
+
+		static void f05(int[] tomb)
+		{
+			Console.WriteLine($"Ennyi db pozitív szám van a tömbben: {f02(tomb)}");
+			Console.WriteLine($"A tömb elemeinek átlaga: {f03(tomb)}");
+            Console.WriteLine();
+            Console.WriteLine("negyedik feladat, a tömbből alkotott páratlan számok:");
+			int[] paratlanok = f04(tomb);
+            foreach (int szam in paratlanok)
+            {
+                Console.Write(szam + " , ");
+            }
+            Console.WriteLine();
+            Console.WriteLine();
 
 
-
-
-
-
+        }
 
 
 
 	}
 }
+
+
+
+

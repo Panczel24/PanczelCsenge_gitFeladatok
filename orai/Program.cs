@@ -21,6 +21,12 @@ namespace orai
 			Console.WriteLine("MÁSODIK FELADAT");
 			Console.WriteLine("ennyi páros szám volt:"+ f02(szamok)); //csak a cimet adom át
 
+
+			Console.WriteLine();
+			Console.WriteLine("harmadiki FELADAT");
+			double[] szam1 = { 10.5, 15.6, 24.6, 22.1, 33.3, 55.6 };
+			Console.WriteLine("az átlag:" + f03(szam1));
+
 		}
 
 		static void f01()
@@ -55,6 +61,20 @@ namespace orai
 			}
 			return szam;
 
+		}
+
+
+
+		static double f03(double[] tomb)
+		{
+			double atlag = 0;
+			for (int i = 0; i < tomb.Length; i++)
+			{ 			
+				atlag+= tomb[i];
+		
+			}
+			atlag /= tomb.Length;
+			return atlag;
 		}
 
 
